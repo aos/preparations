@@ -27,7 +27,8 @@ const lengthOfLongestSubstring = function(s) {
 
     if (index === -1) {
       substring += s[i];
-    } else {
+    } 
+    else {
       longest = Math.max(longest, substring.length);
       substring = substring.slice(index + 1);
       substring += s[i];
