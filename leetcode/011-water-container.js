@@ -28,4 +28,24 @@ const maxArea = (height) => {
   return maxA;
 }
 
-console.log(maxArea([4, 2, 10, 1, 5]));
+// O(n) solution
+const maxAreaN = (height) => {
+  let i = 0, 
+      j = height.length - 1,
+      maxA = 0;
+
+  while (j != i) {
+    maxA = max(((j - i) * min(height[j], height[i])), maxA)
+
+    if (height[j] > height[i]) {
+      i++;
+    }
+    else {
+      j--;
+    }
+  }
+
+  return maxA;
+}
+
+maxAreaN([4, 2, 10, 1, 5]);
